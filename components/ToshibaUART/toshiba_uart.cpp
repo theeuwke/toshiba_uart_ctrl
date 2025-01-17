@@ -394,7 +394,7 @@ void ToshibaUART::loop() {
   status_msg = false;
   while (available()) {
     read_array(msg_start,3);
-    if (msg_start[0] == 0xF0 && msg_start[1] == 0xF0){
+    if (msg_start[0] == 0xA0 && msg_start[1] == 0x01){
       msg_len = msg_start[2];
       read_array(msg,msg_len-3);
       msg_from = msg[0];
